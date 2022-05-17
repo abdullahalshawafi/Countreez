@@ -1,30 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <Navbar :mode="colorsMode" @toggle-mode="toggleMode" />
   <router-view />
 </template>
 
+<script>
+import { onMounted, ref } from "vue";
+import Navbar from "@/components/Navbar.vue";
+
+export default {
+  name: "App",
+  components: { Navbar },
+  setup() {
+    const colorsMode = ref("light");
+
+    onMounted(() => {
+      if (colorsMode.value === "dark") {
+        document.documentElement.setAttribute("mode", "dark");
+      } else {
+        document.documentElement.setAttribute("mode", "light");
+      }
+    });
+
+    const toggleMode = () => {
+      if (colorsMode.value === "light") {
+        colorsMode.value = "dark";
+        document.documentElement.setAttribute("mode", "dark");
+      } else {
+        colorsMode.value = "light";
+        document.documentElement.setAttribute("mode", "light");
+      }
+    };
+
+    return {
+      colorsMode,
+      toggleMode,
+    };
+  },
+};
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+@import "./assets/scss/globals";
 </style>
