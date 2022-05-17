@@ -11,17 +11,8 @@
 
 body {
     font-family: var(--font-family);
+    background-color: var(--background-color);
     color: var(--text-color);
-}
-
-$weights: 300,
-600,
-800;
-
-@each $weight in $weights {
-    .fw-#{$weight} {
-        font-weight: $weight;
-    }
 }
 
 .cursor-pointer {
@@ -36,4 +27,14 @@ $weights: 300,
 .clickable:focus,
 .clickable:hover {
     opacity: 0.7;
+}
+
+$weights: 300,
+600,
+800;
+
+@each $weight in $weights {
+    .fw-#{$weight} {
+        font-weight: $weight;
+    }
 }

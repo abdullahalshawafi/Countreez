@@ -11,7 +11,11 @@
       >
         <i class="fa-regular fa-moon"></i> Dark Mode
       </span>
-      <span v-else @click="toggleMode" class="cursor-pointer clickable fw-600">
+      <span
+        v-else
+        @click="$emit('toggle-mode')"
+        class="cursor-pointer clickable fw-600"
+      >
         <i class="fa-regular fa-sun"></i> Light Mode
       </span>
     </nav>
@@ -33,8 +37,8 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5rem;
-  background-color: var(--background-color);
-  box-shadow: 0 9px 15px -13px rgb(0 0 0 / 20%);
+  background-color: var(--elements-color);
+  box-shadow: 0 9px 10px -13px rgb(0 0 0 / 20%);
 
   a.navbar-legend {
     color: var(--text-color);
