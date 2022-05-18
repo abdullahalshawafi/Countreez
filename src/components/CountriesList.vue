@@ -2,7 +2,7 @@
   <div class="row countries-list">
     <div v-for="country in countries" :key="country.name" class="col-3 gap-3">
       <router-link
-        :to="{ name: 'country-details', params: { code: country.alpha3Code } }"
+        :to="{ name: 'country-details', params: { name: country.name } }"
       >
         <article class="card">
           <div class="card-image">
@@ -16,7 +16,9 @@
                 {{ country.population.toLocaleString() }}
               </p>
               <p><span class="fw-600">Region:</span> {{ country.region }}</p>
-              <p><span class="fw-600">Capital:</span> {{ country.capital }}</p>
+              <p v-if="country.capital">
+                <span class="fw-600">Capital:</span> {{ country.capital }}
+              </p>
             </div>
           </div>
         </article>
@@ -38,6 +40,10 @@ export default {
 
   & > div {
     margin-bottom: 50px;
+
+    p {
+      margin-bottom: 0.25rem;
+    }
   }
 }
 </style>
