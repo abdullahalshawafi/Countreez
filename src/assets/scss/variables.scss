@@ -2,6 +2,7 @@
     --font-family: "Nunito Sans", sans-serif;
     --text-color: hsl(200, 15%, 8%);
     --background-color: hsl(0, 0%, 98%);
+    --fade-color: hsla(0, 0%, 98%, 0);
     --input-color: hsl(0, 0%, 52%);
     --elements-color: hsl(0, 0%, 100%);
 }
@@ -9,5 +10,6 @@
 [mode="dark"] {
     --text-color: hsl(0, 0%, 100%);
     --background-color: hsl(207, 26%, 17%);
+    --fade-color: hsla(209, 26%, 17%, 0);
     --elements-color: hsl(209, 23%, 22%);
 }
