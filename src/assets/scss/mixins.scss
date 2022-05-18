@@ -1,0 +1,12 @@
+@import "variables";
+
+@mixin element-style {
+    background-color: var(--elements-color);
+    box-shadow: 0 0px 10px -3px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+}
+
+@mixin image-style {
+    max-width: 100%;
+    object-fit: cover;
+}
