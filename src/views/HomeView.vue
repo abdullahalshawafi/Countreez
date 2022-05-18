@@ -12,12 +12,7 @@
       />
     </div>
     <div>
-      <loading
-        v-model:active="isLoading"
-        :is-full-page="false"
-        loader="bars"
-        color="#111517"
-      />
+      <Loader :loading="isLoading" />
       <CountriesList :countries="countries" />
     </div>
   </main>
@@ -26,39 +21,33 @@
 <script>
 import { onMounted, ref, watchEffect } from "vue";
 import axios from "axios";
-import Loading from "vue-loading-overlay";
+
 import Search from "@/components/Search.vue";
 import Filter from "@/components/Filter.vue";
+import Loader from "@/components/Loader.vue";
 import CountriesList from "@/components/CountriesList.vue";
-
-import "vue-loading-overlay/dist/vue-loading.css";
 
 export default {
   name: "HomeView",
-  components: { Search, Filter, Loading, CountriesList },
+  components: { Search, Filter, Loader, CountriesList },
   setup() {
     const isLoading = ref(false);
-    const allCountries = ref(
-      JSON.parse(sessionStorage.getItem("countries")) || []
-    );
-    const countries = ref(
-      JSON.parse(sessionStorage.getItem("countries")) || []
-    );
+    const allCountries = ref([]);
+    const countries = ref([]);
     const filter = ref("");
 
     onMounted(async () => {
-      if (!allCountries.value.length) {
-        isLoading.value = true;
-        try {
-          const response = await axios.get("all");
-          allCountries.value = response.data;
-          countries.value = response.data;
-          sessionStorage.setItem("countries", JSON.stringify(response.data));
-        } catch (error) {
-          alert("Couldn't fetch countries data!");
-        } finally {
-          isLoading.value = false;
-        }
+      isLoading.value = true;
+      try {
+        const response = await axios.get(
+          "all?fields=name,flag,population,region,capital"
+        );
+        allCountries.value = response.data;
+        countries.value = response.data;
+      } catch (error) {
+        alert("Couldn't fetch countries data!");
+      } finally {
+        isLoading.value = false;
       }
     });
 
