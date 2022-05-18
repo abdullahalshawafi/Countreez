@@ -15,6 +15,10 @@ body {
     color: var(--text-color);
 }
 
+a {
+    text-decoration: none;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -36,5 +40,111 @@ $weights: 300,
 @each $weight in $weights {
     .fw-#{$weight} {
         font-weight: $weight;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        flex: 0 0 auto;
+        width: #{((25 / 3) * $i) + '%'};
+    }
+}
+
+@for $i from 1 through 10 {
+    .gap-#{$i} {
+        padding: 0 #{$i * 10}px;
+    }
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+
+    ul.dropdown-list {
+        background-color: var(--elements-color);
+        border-radius: 5px;
+        list-style: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 105%;
+        display: none;
+        max-height: 15rem;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1.25rem;
+
+            &:hover {
+                filter: brightness(0.5);
+                backdrop-filter: brightness(2.5);
+            }
+        }
+    }
+
+    &.show ul.dropdown-list {
+        display: block;
+    }
+}
+
+.card {
+    background-color: var(--elements-color);
+    box-shadow: 0 0px 10px -3px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+
+    .card-image {
+        width: 100%;
+
+        img {
+            max-width: 100%;
+            aspect-ratio: 7/5;
+            object-fit: cover;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+
+    .card-details {
+        color: var(--text-color);
+        padding: 1rem 1.5rem;
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        transform: scale(1.02);
     }
 }

@@ -4,8 +4,11 @@
 </template>
 
 <script>
+import axios from "axios";
 import { onMounted, ref } from "vue";
 import Navbar from "@/components/Navbar.vue";
+
+axios.defaults.baseURL = "https://restcountries.com/v2/";
 
 export default {
   name: "App",
