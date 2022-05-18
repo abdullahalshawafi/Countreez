@@ -33,12 +33,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables";
+@import "@/assets/scss/mixins";
 
 form {
-  background-color: var(--elements-color);
-  box-shadow: 0 0px 10px -3px rgb(0 0 0 / 20%);
+  @include element-style;
+
   padding: 1rem 1.5rem;
-  border-radius: 5px;
 
   label {
     display: flex;

@@ -1,5 +1,5 @@
 <template>
-  <div ref="dropdownList" class="filter dropdown" @click="toggleDropdown">
+  <div ref="dropdownList" class="dropdown" @click="toggleDropdown">
     <span>
       {{ filter || "Filter by Region" }}
       <i v-if="filter" class="fas fa-xmark" @click="$emit('clear-filter')"></i>
@@ -62,16 +62,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.filter {
-  background-color: var(--elements-color);
-  box-shadow: 0 0px 10px -3px rgb(0 0 0 / 20%);
-  padding: 1rem 1.5rem;
-  border-radius: 5px;
-
-  span {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
+span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 </style>
