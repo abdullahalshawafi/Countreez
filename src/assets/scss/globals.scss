@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 @import "variables";
+@import "mixins";
 
 *,
 *::after,
@@ -7,6 +8,22 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #00466e80;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7fa6fa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #5885e7;
 }
 
 body {
@@ -17,6 +34,11 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--text-color);
+}
+
+img {
+    @include image-style;
 }
 
 .cursor-pointer {
@@ -43,45 +65,24 @@ $weights: 300,
     }
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .justify-content-between {
     justify-content: space-between;
 }
 
-.align-items-end {
-    align-items: flex-end;
-}
-
-.row>* {
-    flex-shrink: 0;
-    width: 100%;
-    max-width: 100%;
-}
-
-@for $i from 1 through 12 {
-    .col-#{$i} {
-        flex: 0 0 auto;
-        width: #{((25 / 3) * $i) + '%'};
-    }
-}
-
-@for $i from 1 through 10 {
-    .gap-#{$i} {
-        padding: 0 #{$i * 10}px;
-    }
+.align-items-start {
+    align-items: flex-start;
 }
 
 .dropdown {
+    @include element-style;
+
+    padding: 1rem 1.5rem;
     position: relative;
     cursor: pointer;
 
     ul.dropdown-list {
-        background-color: var(--elements-color);
-        border-radius: 5px;
+        @include element-style;
+
         list-style: none;
         position: absolute;
         left: 0;
@@ -111,9 +112,8 @@ $weights: 300,
 }
 
 .card {
-    background-color: var(--elements-color);
-    box-shadow: 0 0px 10px -3px rgb(0 0 0 / 20%);
-    border-radius: 5px;
+    @include element-style;
+
     height: 100%;
     transition: transform 0.2s ease-in-out;
 
@@ -121,9 +121,9 @@ $weights: 300,
         width: 100%;
 
         img {
-            max-width: 100%;
+            @include image-style;
+
             aspect-ratio: 7/5;
-            object-fit: cover;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
         }
@@ -146,5 +146,47 @@ $weights: 300,
     &:hover,
     &:focus {
         transform: scale(1.02);
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+@for $i from 1 through 10 {
+    .gap-#{$i} {
+        padding: 0 #{$i * 10}px;
+    }
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        flex: 0 0 auto;
+        width: #{((25 / 3) * $i) + '%'};
+    }
+}
+
+@media (max-width: 992px) {
+    @for $i from 1 through 12 {
+        .col-md-#{$i} {
+            flex: 0 0 auto;
+            width: #{((25 / 3) * $i) + '%'};
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    @for $i from 1 through 12 {
+        .col-sm-#{$i} {
+            flex: 0 0 auto;
+            width: #{((25 / 3) * $i) + '%'};
+        }
     }
 }
