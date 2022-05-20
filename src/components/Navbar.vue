@@ -9,14 +9,14 @@
         @click="$emit('toggle-mode')"
         class="cursor-pointer clickable fw-600"
       >
-        <i class="fa-regular fa-moon"></i> Dark Mode
+        <i class="fa-regular fa-sun"></i> Light Mode
       </span>
       <span
         v-else
         @click="$emit('toggle-mode')"
         class="cursor-pointer clickable fw-600"
       >
-        <i class="fa-regular fa-sun"></i> Light Mode
+        <i class="fa-regular fa-moon"></i> Dark Mode
       </span>
     </nav>
   </header>
