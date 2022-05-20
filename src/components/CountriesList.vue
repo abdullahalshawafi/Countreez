@@ -46,6 +46,7 @@ export default {
 <style lang="scss" scoped>
 .countries-list {
   margin: 3rem calc(var(--x-gutter) - 30px);
+  margin-bottom: 1rem;
 
   & > div {
     margin-bottom: 50px;

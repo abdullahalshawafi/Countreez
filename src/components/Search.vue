@@ -15,16 +15,25 @@
 </template>
 
 <script>
-import { ref, watchEffect } from "vue";
+import { ref, watch } from "vue";
 
 export default {
   name: "search-component",
   setup(_, { emit }) {
     const search = ref("");
+    const debounce = ref(null);
 
-    watchEffect(() => {
-      emit("search", search.value.toLowerCase());
-    });
+    watch(
+      () => search.value,
+      () => {
+        if (debounce.value) {
+          clearTimeout(debounce.value);
+        }
+        debounce.value = setTimeout(() => {
+          emit("search", search.value.toLowerCase());
+        }, 200);
+      }
+    );
 
     return { search };
   },
