@@ -29,15 +29,26 @@ Users should be able to:
 
 #### Home Page
 
-![Light Home Page](./screenshots/light-home.png)
-
-![Dark Home Page](./screenshots/dark-home.png)
+<div style="display: flex; flex-direction: column; align-items: center">
+  <img src="./screenshots/light-home.png" alt="Light Home Page" style="width: 80%" />
+  <br />
+  <img src="./screenshots/dark-home.png" alt="Dark Home Page" style="width: 80%" />
+</div>
 
 #### Country Details Page
 
-![Light Details Page](./screenshots/light-details.png)
+<div style="display: flex; flex-direction: column; align-items: center">
+  <img src="./screenshots/light-details.png" alt="Light Details Page" style="width: 80%" />
+  <br />
+  <img src="./screenshots/dark-details.png" alt="Dark Details Page" style="width: 80%" />
+</div>
 
-![Dark Details Page](./screenshots/dark-details.png)
+#### Responsive
+
+<div style="display: flex; align-items: flex-start; justify-content: center">
+  <img src="./screenshots/mobile-home.png" alt="Mobile Home Page" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./screenshots/mobile-details.png" alt="Mobile Details Page" />
+</div>
 
 ## Built with
 
