@@ -2,7 +2,7 @@
 
 This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-Live Site URL: [https://countreez.netlify.app/](https://countreez.netlify.app/)
+Live Site URL: [https://countreez.vercel.app/](https://countreez.vercel.app/)
 
 ## Table of contents
 
@@ -47,13 +47,16 @@ Users should be able to:
 
 #### Responsive
 
-Home Page                                           |
-----------------------------------------------------|
-![Mobile Home Page](./screenshots/mobile-home.png)  |
+<p align="center">
+  <img src="./screenshots/mobile-home.png" alt="Mobile Home Page" style="width: 30%" />
+</p>
 
-Details Page                                              |
-----------------------------------------------------------|
-![Mobile Details Page](./screenshots/mobile-details.png)  |
+<br />
+<br />
+
+<p align="center">
+  <img src="./screenshots/mobile-details.png" alt="Mobile Details Page" style="width: 30%" />
+</p>
 
 ## Built with
 
