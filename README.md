@@ -52,7 +52,6 @@ Users should be able to:
 </p>
 
 <br />
-<br />
 
 <p align="center">
   <img src="./screenshots/mobile-details.png" alt="Mobile Details Page" style="width: 30%" />
