@@ -9,6 +9,7 @@ Live Site URL: [https://countreez.vercel.app/](https://countreez.vercel.app/)
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshots](#screenshots)
+  - [Preview](#preview)
 - [Built with](#built-with)
 - [Project setup](#project-setup)
 
@@ -56,6 +57,10 @@ Users should be able to:
 <p align="center">
   <img src="./screenshots/mobile-details.png" alt="Mobile Details Page" style="width: 30%" />
 </p>
+
+### Preview
+
+  ![Preview](./screenshots/preview.gif)
 
 ## Built with
 
