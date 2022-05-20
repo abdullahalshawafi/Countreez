@@ -1,6 +1,10 @@
 <template>
   <div class="row countries-list">
-    <div v-for="country in countries" :key="country.name" class="col-3 gap-3">
+    <div
+      v-for="country in countries"
+      :key="country.name"
+      class="col-3 col-md-4 col-sm-12 gap-3"
+    >
       <router-link
         :to="{ name: 'country-details', params: { name: country.name } }"
       >
@@ -36,7 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .countries-list {
-  margin: 3rem calc(5rem - 30px);
+  margin: 3rem calc(var(--x-gutter) - 30px);
 
   & > div {
     margin-bottom: 50px;
@@ -44,6 +48,12 @@ export default {
     p {
       margin-bottom: 0.25rem;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .countries-list {
+    margin: 3rem var(--x-gutter);
   }
 }
 </style>

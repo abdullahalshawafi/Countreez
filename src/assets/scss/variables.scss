@@ -1,4 +1,5 @@
 :root {
+    --x-gutter: 5rem;
     --font-family: "Nunito Sans", sans-serif;
     --text-color: hsl(200, 15%, 8%);
     --background-color: hsl(0, 0%, 98%);
@@ -12,4 +13,16 @@
     --background-color: hsl(207, 26%, 17%);
     --fade-color: hsla(209, 26%, 17%, 0);
     --elements-color: hsl(209, 23%, 22%);
+}
+
+@media (max-width: 991px) {
+    :root {
+        --x-gutter: 3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    :root {
+        --x-gutter: 1rem;
+    }
 }

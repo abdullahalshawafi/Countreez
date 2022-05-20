@@ -30,19 +30,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables";
-
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem;
+  padding: 1rem var(--x-gutter);
   background-color: var(--elements-color);
   box-shadow: 0 9px 10px -13px rgb(0 0 0 / 20%);
 
   a.navbar-legend {
     color: var(--text-color);
     text-decoration: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    font-size: 12px;
   }
 }
 </style>

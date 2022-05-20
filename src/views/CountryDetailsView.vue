@@ -5,13 +5,13 @@
     </button>
     <Loader :loading="isLoading" />
     <div v-if="country" class="row justify-content-between">
-      <div class="col-5">
+      <div class="col-5 col-sm-12">
         <img :src="country.flag" alt="flag" />
       </div>
-      <div class="col-6">
+      <div class="col-6 col-sm-12">
         <h1>{{ country.name }}</h1>
         <div class="row country-details">
-          <div class="col-6">
+          <div class="col-6 col-sm-12">
             <p>
               <span class="fw-600">Native Name: </span>{{ country.nativeName }}
             </p>
@@ -24,7 +24,7 @@
               <span class="fw-600">Capital: </span>{{ country.capital }}
             </p>
           </div>
-          <div class="col-6">
+          <div class="col-6 col-sm-12">
             <p v-if="country.topLevelDomain[0]">
               <span class="fw-600">Top Level Domain: </span>
               {{ country.topLevelDomain[0] }}
@@ -142,7 +142,7 @@ export default {
 
 .container {
   font-size: 16px !important;
-  padding: 3rem 5rem 0 5rem;
+  padding: 3rem var(--x-gutter) 0 var(--x-gutter);
 
   button {
     @include element-style;
@@ -165,23 +165,34 @@ export default {
       width: 100%;
       height: auto;
       max-height: 22rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.2);
     }
 
     .country-details {
-      margin: 2rem 0;
-      align-content: center;
+      & > div {
+        margin-top: 2rem;
+        align-content: center;
 
-      p {
-        margin-bottom: 0.75rem;
+        p {
+          margin-bottom: 0.75rem;
+        }
       }
 
       .border-countries {
-        margin-top: 2rem;
+        margin: 2rem 0;
         display: flex;
         align-items: center;
         max-width: 100%;
         white-space: nowrap;
         position: relative;
+
+        @media (max-width: 767px) {
+          & {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
 
         &::after {
           content: "";
@@ -216,6 +227,18 @@ export default {
             display: block;
             padding: 0.25rem 1rem;
             margin: 0 0.5rem;
+          }
+
+          @media (max-width: 767px) {
+            & {
+              margin-top: 1rem;
+              max-width: 100%;
+
+              span {
+                margin: 0;
+                margin-right: 1rem;
+              }
+            }
           }
         }
       }

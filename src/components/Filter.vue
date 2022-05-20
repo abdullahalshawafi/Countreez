@@ -62,10 +62,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-span {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.dropdown {
+  margin-top: 2rem;
+
+  span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 }
 </style>

@@ -17,6 +17,15 @@ export default {
     const colorsMode = ref(localStorage.getItem("mode") || "light");
 
     onMounted(() => {
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        colorsMode.value = "dark";
+      } else {
+        colorsMode.value = "light";
+      }
+
       if (colorsMode.value === "dark") {
         localStorage.setItem("mode", "dark");
         document.documentElement.setAttribute("mode", "dark");

@@ -32,12 +32,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables";
 @import "@/assets/scss/mixins";
 
 form {
   @include element-style;
 
+  margin-top: 2rem;
   padding: 1rem 1.5rem;
 
   label {
@@ -51,11 +51,15 @@ form {
       width: 100%;
       border: none;
       background-color: transparent;
-      color: var(--input-color);
+      color: var(--text-color);
       margin-left: 1.5rem;
 
       &:focus {
         outline: none;
+      }
+
+      &::placeholder {
+        color: var(--input-color);
       }
     }
   }

@@ -3,9 +3,9 @@
     <div
       class="row justify-content-between align-items-start search-filter-wrapper"
     >
-      <Search class="col-5" @search="searchCountries" />
+      <Search class="col-5 col-md-7 col-sm-12" @search="searchCountries" />
       <Filter
-        class="col-2"
+        class="col-2 col-md-4 col-sm-8"
         @clear-filter="clearFilter"
         @filter="setFilter"
         :filter="filter"
@@ -94,6 +94,6 @@ main {
 }
 
 .search-filter-wrapper {
-  padding: 2rem 5rem 0 5rem;
+  padding: 0 var(--x-gutter);
 }
 </style>
