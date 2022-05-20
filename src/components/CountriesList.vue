@@ -1,5 +1,10 @@
 <template>
-  <div class="row countries-list">
+  <div
+    class="row countries-list"
+    data-aos="fade-up"
+    data-aos-duration="800"
+    data-aos-delay="1000"
+  >
     <div
       v-for="country in countries"
       :key="country.name"

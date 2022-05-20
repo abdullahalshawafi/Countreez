@@ -4,6 +4,7 @@
 </template>
 
 <script>
+import AOS from "aos";
 import axios from "axios";
 import { onMounted, ref } from "vue";
 import Navbar from "@/components/Navbar.vue";
@@ -17,6 +18,8 @@ export default {
     const colorsMode = ref(localStorage.getItem("mode") || "light");
 
     onMounted(() => {
+      AOS.init();
+
       if (
         window.matchMedia &&
         window.matchMedia("(prefers-color-scheme: dark)").matches

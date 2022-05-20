@@ -5,10 +5,20 @@
     </button>
     <Loader :loading="isLoading" />
     <div v-if="country" class="row justify-content-between">
-      <div class="col-5 col-sm-12">
+      <div
+        class="col-5 col-sm-12"
+        data-aos="fade-right"
+        data-aos-duration="800"
+        data-aos-delay="1000"
+      >
         <img :src="country.flag" alt="flag" />
       </div>
-      <div class="col-6 col-sm-12">
+      <div
+        class="col-6 col-sm-12"
+        data-aos="fade-left"
+        data-aos-duration="800"
+        data-aos-delay="1000"
+      >
         <h1>{{ country.name }}</h1>
         <div class="row country-details">
           <div class="col-6 col-sm-12">
@@ -160,13 +170,19 @@ export default {
 
   & > div.row {
     margin-top: 3rem;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: auto;
       max-height: 22rem;
-      margin-bottom: 2rem;
       box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.2);
+
+      @media (max-width: 767px) {
+        & {
+          margin-bottom: 2rem;
+        }
+      }
     }
 
     .country-details {
